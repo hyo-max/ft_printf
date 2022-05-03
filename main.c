@@ -31,7 +31,9 @@ int	main(void)
 
 	// printf("%s\n", "abc");
 	// printf("%c %c %c\n", 'a','b','c');
-	int z =  ft_printf("abc\n");
-	printf("%d\n", z);
+	int z =  ft_printf("abc %c ada\n%c da d\n", '1', '2');
+	printf("%d\n\n", z);
+	int y =  printf("abc %c ada\n%c da d\n", '1', '2');
+	printf("%d\n", y);
 	return (0);
 }
