@@ -6,7 +6,7 @@
 /*   By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 17:02:50 by hyojpark          #+#    #+#             */
-/*   Updated: 2022/05/04 17:20:48 by hyojpark         ###   ########.fr       */
+/*   Updated: 2022/05/04 20:16:34 by hyojpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ int	format_specifier(va_list ap, const char *format, int print_len)
 	if (*format == 'c')
 		print_len += ft_putchar(va_arg(ap, int));
 	else if (*format == 's')
-		print_len += ft_printstr(va_arg(ap, char *));
+		print_len += ft_print_str(va_arg(ap, char *));
 	// if (*format == 'p')
 	// 	va_arg(ap, void *);
 	if (*format == 'd')
-		print_len += ft_printnum(va_arg(ap, int));
+		print_len += ft_print_num(va_arg(ap, int));
 	if (*format == 'i')
-		print_len += ft_printnum(va_arg(ap, int));
+		print_len += ft_print_num(va_arg(ap, int));
 	// if (*format == 'u')
-	// 	va_arg(ap, unsigned int);
+	// 	print_len += ft_print_unum(va_arg(ap, unsigned int));
 	// if (*format == 'x')
 	// 	va_arg(ap, unsigned int);
 	// if (*format == 'X')

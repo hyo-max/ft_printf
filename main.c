@@ -73,6 +73,14 @@ int	main(void)
 	int m =  printf("%s%c%% f%dad\n", "123", 'd',2147483647);
 	printf("%d\n\n", m);
 
+	printf("%u\n", -1);  //4294967295
+	printf("%u\n", -2);  //4294967294
+	printf("%u\n", -4294967294); //2
+	printf("%u\n", -4294967295); //1
+	printf("%u\n", 4294967296); //0
+	printf("%u\n", 4294967297); //1
+	printf("%u\n", 4294967298); //2
+
 	
 	return (0);
 }

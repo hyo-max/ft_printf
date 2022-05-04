@@ -6,13 +6,13 @@
 /*   By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 20:11:31 by hyojpark          #+#    #+#             */
-/*   Updated: 2022/05/04 17:54:15 by hyojpark         ###   ########.fr       */
+/*   Updated: 2022/05/04 20:15:03 by hyojpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printstr(char *str)
+int	ft_print_str(char *str)
 {
 	int	str_len;
 
