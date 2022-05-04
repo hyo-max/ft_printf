@@ -31,9 +31,26 @@ int	main(void)
 
 	// printf("%s\n", "abc");
 	// printf("%c %c %c\n", 'a','b','c');
+	printf("=====%%c 형======\n");
 	int z =  ft_printf("abc %c ada\n%c da d\n", '1', '2');
 	printf("%d\n\n", z);
 	int y =  printf("abc %c ada\n%c da d\n", '1', '2');
 	printf("%d\n", y);
+
+	printf("=====%%s 형======\n");
+	int a =  ft_printf("abc %s ada\n%s da d\n", "123","456");
+	printf("%d\n\n", a);
+	int b =  printf("abc %s ada\n%s da d\n", "123","456");
+	printf("%d\n", b);
+	
+	printf("=====%% 형======\n");
+	int c =  ft_printf("abc %s ad%%a\n%s da d\n", "123","456");
+	printf("%d\n\n", c);
+	int d =  printf("abc %s ad%%a\n%s da d\n", "123","456");
+	printf("%d\n", d);
+
+	printf("===== test ======\n");
+	ft_printf("%s%c%%\n", "123", 'd');
+	printf("%s%c%%\n", "123", 'd');
 	return (0);
 }

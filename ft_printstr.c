@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 17:05:35 by hyojpark          #+#    #+#             */
-/*   Updated: 2022/05/03 20:17:30 by hyojpark         ###   ########.fr       */
+/*   Created: 2022/05/03 20:11:31 by hyojpark          #+#    #+#             */
+/*   Updated: 2022/05/03 20:30:48 by hyojpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
+int	ft_printstr(char *str)
+{
+	int	str_len;
 
-int	ft_printf(const char *format, ...);
-int	ft_printstr(char *str);
-
-#endif
+	str_len = 0;
+	while (str[str_len])
+		str_len++;
+	write(1, str, str_len);
+	return (str_len);
+}

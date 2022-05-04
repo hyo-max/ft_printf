@@ -6,7 +6,7 @@
 /*   By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 17:02:50 by hyojpark          #+#    #+#             */
-/*   Updated: 2022/05/03 17:12:15 by hyojpark         ###   ########.fr       */
+/*   Updated: 2022/05/03 20:44:15 by hyojpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-int	format_specifier(va_list ap, const char *format, int result)
+int	format_specifier(va_list ap, const char *format, int print_len)
 {
 	if (*format == 'c')
-		result += ft_putchar(va_arg(ap, int));
-	// if (*format == 's')
-	// 	va_arg(ap, char *);
+		print_len += ft_putchar(va_arg(ap, int));
+	else if (*format == 's')
+		print_len += ft_printstr(va_arg(ap, char *));
 	// if (*format == 'p')
 	// 	va_arg(ap, int);
 	// if (*format == 'd')
@@ -36,29 +36,29 @@ int	format_specifier(va_list ap, const char *format, int result)
 	// 	va_arg(ap, int);
 	// if (*format == 'X')
 	// 	va_arg(ap, int);
-	// if (*format == '%')
-	// 	va_arg(ap, int);
-	return (result);
+	if (*format == '%')
+		print_len += ft_putchar('%');
+	return (print_len);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
-	int		result;
+	int		print_len;
 
-	result = 0;
+	print_len = 0;
 	va_start(ap, format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			result = format_specifier(ap, format, result);
+			print_len = format_specifier(ap, format, print_len);
 		}
 		else
-			result += ft_putchar(*format);
+			print_len += ft_putchar(*format);
 		format++;
 	}
 	va_end(ap);
-	return (result);
+	return (print_len);
 }
