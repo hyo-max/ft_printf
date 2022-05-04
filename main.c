@@ -27,10 +27,6 @@
 
 int	main(void)
 {
-	// int	a = 1, b = 2, c = 3, d = 4, e = 5;
-
-	// printf("%s\n", "abc");
-	// printf("%c %c %c\n", 'a','b','c');
 	printf("=====%%c 형======\n");
 	int z =  ft_printf("abc %c ada\n%c da d\n", '1', '2');
 	printf("%d\n\n", z);
@@ -49,8 +45,16 @@ int	main(void)
 	int d =  printf("abc %s ad%%a\n%s da d\n", "123","456");
 	printf("%d\n", d);
 
+	printf("=====%%d 형======\n");
+	ft_printf("%d\n", 2147483647);
+	printf("%d\n", 2147483647);
+	ft_printf("%d\n", -2147483648);
+	printf("%d\n", -2147483648);
+
 	printf("===== test ======\n");
 	ft_printf("%s%c%%\n", "123", 'd');
 	printf("%s%c%%\n", "123", 'd');
+
+	
 	return (0);
 }

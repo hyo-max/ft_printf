@@ -1,10 +1,39 @@
 NAME	= libftprintf.a
 
-SRCS	= 
+SRCS	= ft_printf.c ft_printstr.c ft_printnum.c
 
-all :
+CC		= gcc
+CFLAGS	= -Wall -Werror -Wextra
+
+AR		= ar
+ARFLAGS	= rcs
+
+RM		= rm -f
+
+OBJS	= $(SRCS:.c=.o)
+
+LIBFT= ./libft/libft.a
+
+all : $(NAME)
+
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} 
+
+$(NAME): $(OBJS)
+	$(MAKE) -C ./libft
+	cp ${LIBFT} .
+	mv libft.a $(NAME)
+	${AR} ${ARFLAGS} $(NAME) $(OBJS)
+	ranlib $(NAME) 
+
 clean :
-fclean :
-re : 
+	$(MAKE) -C ./libft clean
+	$(RM) $(OBJS)
+
+fclean : clean
+	$(MAKE) -C ./libft fclean
+	$(RM) $(NAME)
+
+re : fclean all
 
 .PHONY	: all clean fclean re
