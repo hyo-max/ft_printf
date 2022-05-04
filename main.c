@@ -40,8 +40,8 @@ int	main(void)
 	printf("%d\n", b);
 	int n =  ft_printf(" NULL %s NULL \n", NULL);
 	printf("%d\n", n);
-	int o =  printf(" NULL %s NULL \n", NULL);
-	printf("%d\n", o);
+	// int o =  printf(" NULL %s NULL \n", NULL);
+	// printf("%d\n", o);
 	
 	printf("=====%% 형======\n");
 	int c =  ft_printf("abc %s ad%%a\n%s da d\n", "123","456");
@@ -72,6 +72,14 @@ int	main(void)
 	printf("%d\n", l);
 	int m =  printf("%s%c%% f%dad\n", "123", 'd',2147483647);
 	printf("%d\n\n", m);
+
+	ft_printf("%u\n", -1);
+	ft_printf("%u\n", -2);  //4294967294
+	ft_printf("%u\n", -4294967294); //2
+	ft_printf("%u\n", -4294967295); //1
+	ft_printf("%u\n", 4294967296); //0
+	ft_printf("%u\n", 4294967297); //1
+	ft_printf("%u\n", 4294967298); //2
 
 	printf("%u\n", -1);  //4294967295
 	printf("%u\n", -2);  //4294967294
