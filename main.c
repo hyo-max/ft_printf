@@ -38,22 +38,40 @@ int	main(void)
 	printf("%d\n\n", a);
 	int b =  printf("abc %s ada\n%s da d\n", "123","456");
 	printf("%d\n", b);
+	int n =  ft_printf(" NULL %s NULL \n", NULL);
+	printf("%d\n", n);
+	int o =  printf(" NULL %s NULL \n", NULL);
+	printf("%d\n", o);
 	
 	printf("=====%% 형======\n");
 	int c =  ft_printf("abc %s ad%%a\n%s da d\n", "123","456");
-	printf("%d\n\n", c);
+	printf("%d\n", c);
 	int d =  printf("abc %s ad%%a\n%s da d\n", "123","456");
 	printf("%d\n", d);
 
 	printf("=====%%d 형======\n");
-	ft_printf("%d\n", 2147483647);
-	printf("%d\n", 2147483647);
-	ft_printf("%d\n", -2147483648);
-	printf("%d\n", -2147483648);
+	int e =  ft_printf("%d\n", 2147483647);
+	printf("%d\n", e);
+	int f =  printf("%d\n", 2147483647);
+	printf("%d\n", f);
+	int g =  ft_printf("%d\n", -2147483647);
+	printf("%d\n", g);
+	int h =  printf("%d\n", -2147483647);
+	printf("%d\n\n", h);
+
+	printf("=====%%i 형======\n");
+	int i =  printf("%i\n", 2147483647);
+	printf("%d\n", i);
+	int j =  printf("%i\n", -2147483647);
+	printf("%d\n", j);
+	int k =  printf("%i\n", -2147483647);
+	printf("%d\n\n", k);
 
 	printf("===== test ======\n");
-	ft_printf("%s%c%%\n", "123", 'd');
-	printf("%s%c%%\n", "123", 'd');
+	int l =  ft_printf("%s%c%% f%dad\n", "123", 'd', 2147483647);
+	printf("%d\n", l);
+	int m =  printf("%s%c%% f%dad\n", "123", 'd',2147483647);
+	printf("%d\n\n", m);
 
 	
 	return (0);
