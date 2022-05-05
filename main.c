@@ -66,20 +66,27 @@ int	main(void)
 	int m =  printf("%s%c%% f%dad\n", "123", 'd',2147483647);
 	printf("%d\n\n", m);
 
-
-	// printf("===== %%p ======\n");
-	// unsigned int m = 123456;
-	// printf("%p\n\n", &m);
-	// printf("%x\n\n", m);
-
-	printf("===== %%x ======\n");
+	printf("===== %%xX ======\n");
 	unsigned int q = 123456;
-	printf("%p\n\n", &q);
-	printf("%X\n\n", q);
-	ft_printf("%X\n\n", q);
-	printf("%x\n\n", q);
-	ft_printf("%x\n\n", q);
+	int ab = printf("%X\n\n", q);
+	printf("%d\n", ab);
+	int ac = ft_printf("%X\n\n", q);
+	printf("%d\n", ac);
+	int bc = printf("%x\n\n", q);
+	printf("%d\n", bc);
+	int cb = ft_printf("%x\n\n", q);
+	printf("%d\n", cb);
 
+
+	printf("===== %%p ======\n");
+	unsigned int ma = 123456;
+	printf("%p\n\n", &ma);
+	printf("%d\n\n", ma);
+	printf("%x\n\n", &ma);
+
+	ft_printf("%p\n\n", &ma);
+	ft_printf("%d\n\n", ma);
+	ft_printf("%x\n\n", &ma);
 
 	return (0);
 }
