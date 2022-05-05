@@ -1,29 +1,5 @@
 #include "ft_printf.h"
 #include <stdio.h>
-// #include <stdarg.h>
-// #include <unistd.h>
-// #include <stdlib.h>
-
-// int	sum(int num, ...)
-// {
-// 	va_list ap;
-// 	int		arg;
-// 	int		result;
-// 	int		i;
-
-// 	arg = 0;
-// 	result = 0;
-// 	i = 0;
-// 	va_start(ap, num);	//ap가 num의 맨 첫번째 가변인수를 가르키게 초기화
-// 	while (i < num)
-// 	{
-// 		arg = va_arg(ap, int);  //int 사이즈 만큼 이동
-// 		result += arg;
-// 		i++;
-// 	}
-// 	va_end(ap);  //가변인자 사용 종료
-// 	return (result);
-// }
 
 int	main(void)
 {
@@ -60,35 +36,50 @@ int	main(void)
 	printf("%d\n\n", h);
 
 	printf("=====%%i 형======\n");
-	int i =  printf("%i\n", 2147483647);
+	int i =  ft_printf("%i\n", 2147483647);
 	printf("%d\n", i);
-	int j =  printf("%i\n", -2147483647);
+	int j =  ft_printf("%i\n", -2147483647);
 	printf("%d\n", j);
-	int k =  printf("%i\n", -2147483647);
+	int k =  ft_printf("%i\n", -2147483647);
 	printf("%d\n\n", k);
 
-	printf("===== test ======\n");
+	printf("===== %%u ======\n");
+	// ft_printf("%u\n", -1);
+	// ft_printf("%u\n", -2);  //4294967294
+	// ft_printf("%u\n", -4294967294); //2
+	// ft_printf("%u\n", -4294967295); //1
+	// ft_printf("%u\n", 4294967296); //0
+	// ft_printf("%u\n", 4294967297); //1
+	// ft_printf("%u\n", 4294967298); //2
+
+	// printf("%u\n", -1);  //4294967295
+	// printf("%u\n", -2);  //4294967294
+	// printf("%u\n", -4294967294); //2
+	// printf("%u\n", -4294967295); //1
+	// printf("%u\n", 4294967296); //0
+	// printf("%u\n", 4294967297); //1
+	// printf("%u\n", 4294967298); //2
+
+	printf("===== mix ======\n");
 	int l =  ft_printf("%s%c%% f%dad\n", "123", 'd', 2147483647);
 	printf("%d\n", l);
 	int m =  printf("%s%c%% f%dad\n", "123", 'd',2147483647);
 	printf("%d\n\n", m);
 
-	ft_printf("%u\n", -1);
-	ft_printf("%u\n", -2);  //4294967294
-	ft_printf("%u\n", -4294967294); //2
-	ft_printf("%u\n", -4294967295); //1
-	ft_printf("%u\n", 4294967296); //0
-	ft_printf("%u\n", 4294967297); //1
-	ft_printf("%u\n", 4294967298); //2
 
-	printf("%u\n", -1);  //4294967295
-	printf("%u\n", -2);  //4294967294
-	printf("%u\n", -4294967294); //2
-	printf("%u\n", -4294967295); //1
-	printf("%u\n", 4294967296); //0
-	printf("%u\n", 4294967297); //1
-	printf("%u\n", 4294967298); //2
+	// printf("===== %%p ======\n");
+	// unsigned int m = 123456;
+	// printf("%p\n\n", &m);
+	// printf("%x\n\n", m);
 
-	
+	printf("===== %%x ======\n");
+	unsigned int q = 123456;
+	printf("%p\n\n", &q);
+	printf("%X\n\n", q);
+	ft_printf("%X\n\n", q);
+	printf("%x\n\n", q);
+	ft_printf("%x\n\n", q);
+
+
 	return (0);
 }

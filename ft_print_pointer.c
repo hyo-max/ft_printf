@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 20:11:31 by hyojpark          #+#    #+#             */
-/*   Updated: 2022/05/05 10:43:17 by hyojpark         ###   ########.fr       */
+/*   Created: 2022/05/05 10:40:37 by hyojpark          #+#    #+#             */
+/*   Updated: 2022/05/05 14:38:35 by hyojpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_char(char c)
+int	ft_print_pointer(void *a)
 {
-	write(1, &c, 1);
+	unsigned long b;
+
+	b = (unsigned long)a;
+
+	
 	return (1);
-}
-
-int	ft_print_str(char *str)
-{
-	int	str_len;
-
-	if (!str)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	str_len = 0;
-	while (str[str_len])
-		str_len++;
-	write(1, str, str_len);
-	return (str_len);
 }

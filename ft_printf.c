@@ -6,38 +6,28 @@
 /*   By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 17:02:50 by hyojpark          #+#    #+#             */
-/*   Updated: 2022/05/04 20:45:42 by hyojpark         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:43:37 by hyojpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (1);
-}
-
 int	format_specifier(va_list ap, const char *format, int print_len)
 {
 	if (*format == 'c')
-		print_len += ft_putchar(va_arg(ap, int));
+		print_len += ft_print_char(va_arg(ap, int));
 	else if (*format == 's')
 		print_len += ft_print_str(va_arg(ap, char *));
-	// if (*format == 'p')
-	// 	va_arg(ap, void *);
-	if (*format == 'd')
+	else if (*format == 'p')
+		print_len += ft_print_pointer(va_arg(ap, void *));
+	else if (*format == 'd' || *format == 'i')
 		print_len += ft_print_num(va_arg(ap, int));
-	if (*format == 'i')
-		print_len += ft_print_num(va_arg(ap, int));
-	if (*format == 'u')
+	else if (*format == 'u')
 		print_len += ft_print_unum(va_arg(ap, unsigned int));
-	// if (*format == 'x')
-	// 	va_arg(ap, unsigned int);
-	// if (*format == 'X')
-	// 	va_arg(ap, unsigned int);
-	if (*format == '%')
-		print_len += ft_putchar('%');
+	else if (*format == 'x' || *format == 'X')
+		print_len += ft_print_hex(va_arg(ap, unsigned int), *format);		
+	else if (*format == '%')
+		print_len += ft_print_char('%');
 	return (print_len);
 }
 
@@ -56,7 +46,7 @@ int	ft_printf(const char *format, ...)
 			print_len = format_specifier(ap, format, print_len);
 		}
 		else
-			print_len += ft_putchar(*format);
+			print_len += ft_print_char(*format);
 		format++;
 	}
 	va_end(ap);
