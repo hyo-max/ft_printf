@@ -6,7 +6,7 @@
 /*   By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:45:56 by hyojpark          #+#    #+#             */
-/*   Updated: 2022/05/04 20:48:15 by hyojpark         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:27:58 by hyojpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_get_len(unsigned int num)
 	return (count);
 }
 
-char *ft_uitoa(unsigned int num)
+char	*ft_uitoa(unsigned int num)
 {
 	int		len;
 	char	*result;
@@ -52,7 +52,6 @@ int	ft_print_unum(unsigned int num)
 	str = ft_uitoa(num);
 	str_len = ft_print_str(str);
 	free(str);
-
 	return (str_len);
 }
 
@@ -64,7 +63,5 @@ int	ft_print_num(int num)
 	str = ft_itoa(num);
 	str_len = ft_print_str(str);
 	free(str);
-
 	return (str_len);
 }
-

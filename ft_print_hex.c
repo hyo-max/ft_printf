@@ -6,7 +6,7 @@
 /*   By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:30:32 by hyojpark          #+#    #+#             */
-/*   Updated: 2022/05/05 16:19:22 by hyojpark         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:26:31 by hyojpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	hex_conversion(unsigned int n, char *hex)
 
 int	ft_print_hex(unsigned int num, const char format)
 {
-	char 			*hex;
+	char			*hex;
 	int				num_len;
 	unsigned int	temp;
-	
+
 	num_len = 0;
 	temp = num;
 	if (num == 0)
