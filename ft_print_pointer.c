@@ -6,7 +6,7 @@
 /*   By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:40:37 by hyojpark          #+#    #+#             */
-/*   Updated: 2022/05/05 17:48:08 by hyojpark         ###   ########.fr       */
+/*   Updated: 2022/05/06 13:09:33 by hyojpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	conversion(unsigned long long n, char *hex)
 
 int	ft_hex(unsigned long long num)
 {
-	char			*hex;
-	int				num_len;
+	char				*hex;
+	int					num_len;
 	unsigned long long	temp;
 
 	num_len = 0;
