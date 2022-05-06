@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: hyojpark <hyojpark@student.42seoul.kr>     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/06 13:12:02 by hyojpark          #+#    #+#              #
-#    Updated: 2022/05/06 13:12:04 by hyojpark         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME	= libftprintf.a
 
 SRCS	= ft_printf.c ft_print_str.c ft_print_num.c ft_print_pointer.c ft_print_hex.c
@@ -36,7 +24,6 @@ $(NAME): $(OBJS)
 	cp ${LIBFT} .
 	mv libft.a $(NAME)
 	${AR} ${ARFLAGS} $(NAME) $(OBJS)
-	${AR} ${ARFLAGS} $(NAME) 
 
 clean :
 	$(MAKE) -C ./libft clean
